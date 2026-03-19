@@ -1,8 +1,8 @@
-# FirstFrame
+# LastFrame
 
 ## Overview
 
-**FirstFrame** is a lightweight command-line tool that extracts the **first frame** from MP4 video files using OpenCV (`cv2`).  
+**LastFrame** is a lightweight command-line tool that extracts the **first frame** from MP4 video files using OpenCV (`cv2`).  
 
 It automatically scans the current directory for `.mp4` files (case-insensitive), displays an interactive numbered list with file sizes, lets the user select a video, and saves the first frame as an image file (PNG by default; supports JPG, JPEG, BMP, TIFF).  
 
@@ -33,7 +33,7 @@ No C compiler or Cython is required for normal usage — the project is currentl
 ```bash
 # 1. Clone or download the repo
 git clone <your-repo-url>
-cd FirstFrame
+cd LastFrame
 
 # 2. (Recommended) Create & activate virtual environment
 python3 -m venv venv
@@ -50,23 +50,23 @@ pip install -e .
 Now you can run it with:
 
 ```bash
-python -m FirstFrame
+python -m LastFrame
 ```
 
 ### Future PyPI Release (when ready)
 
 ```bash
-pip install firstframe
+pip install lastframe
 ```
 
-(You would then publish it via `python -m build` + twine, and configure `console_scripts` in `pyproject.toml` for a `firstframe` command.)
+(You would then publish it via `python -m build` + twine, and configure `console_scripts` in `pyproject.toml` for a `lastframe` command.)
 
 ## Usage
 
 Place your MP4 videos in the current directory and run:
 
 ```bash
-python -m FirstFrame
+python -m LastFrame
 ```
 
 Example session:
@@ -101,7 +101,7 @@ The tool saves the image and waits for you to press Enter before closing.
 For scripting / automation:
 
 ```python
-from FirstFrame.__main__ import main
+from LastFrame.__main__ import main
 main()
 ```
 
@@ -110,11 +110,11 @@ main()
 Follows modern Python packaging conventions with `src/` layout:
 
 ```
-FirstFrame/
+LastFrame/
 ├── README.md
 ├── pyproject.toml            # (add when packaging properly)
 ├── src/
-│   └── FirstFrame/
+│   └── LastFrame/
 │       ├── __init__.py
 │       └── __main__.py       # Main logic + entry point
 └── (optional future folders)
@@ -124,7 +124,7 @@ FirstFrame/
 
 ## Development Notes
 
-- The core logic lives in `src/FirstFrame/__main__.py`
+- The core logic lives in `src/LastFrame/__main__.py`
 - To add features (batch mode, other formats, progress bar…): edit the `main()` and `get_first_frame()` functions
 - Logging: `ChronicleLogger` is imported but unused — either integrate it or remove the import
 - Tests: Consider adding `tests/` folder + `pytest` later

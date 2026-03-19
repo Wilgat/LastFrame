@@ -9,7 +9,7 @@
 - Cython build support through `build.sh` and `pyproject.toml` for compiling performance-critical sections like VideoCapture operations .
 
 ### Changed
-- Initial implementation uses procedural functions; potential future OOP refactor to a `LastFrameExtractor` class without modifying existing code .
+- Initial implementation uses procedural functions; potential future OOP refactor to a `FirstFrameExtractor` class without modifying existing code .
 
 ### Deprecated
 - None in initial release.

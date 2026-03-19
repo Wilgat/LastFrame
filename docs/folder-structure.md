@@ -1,16 +1,16 @@
-## The folder structure for the project: LastFrame
- * Project: LastFrame is a Cython (CyMaster type) project!
+## The folder structure for the project: FirstFrame
+ * Project: FirstFrame is a Cython (CyMaster type) project!
     ```
-    LastFrame/
+    FirstFrame/
     ├── build.sh
     ├── docs
     │   ├── CHANGELOG.md
     │   ├── folder-structure.md
-    │   └── LastFrame-spec.md
+    │   └── FirstFrame-spec.md
     ├── pyproject.toml
     ├── README.md
     └── src
-        └── LastFrame
+        └── FirstFrame
             ├── cli.py
             ├── __init__.py
             └── __main__.py

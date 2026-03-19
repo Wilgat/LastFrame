@@ -2,11 +2,11 @@
 set -eu
 
 # =============================================
-# LastFrame build script — by Wong Chun Fai (wilgat)
+# FirstFrame build script — by Wong Chun Fai (wilgat)
 # Pure POSIX sh, egg-info fully obliterated
 # =============================================
 
-PROJECT="LastFrame"
+PROJECT="FirstFrame"
 
 # Get version from package (fallback to unknown)
 VERSION=$(python3 - <<'PY'
@@ -17,14 +17,14 @@ import sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "src"))
 
 try:
-    import LastFrame
-    print(LastFrame.__version__)
+    import FirstFrame
+    print(FirstFrame.__version__)
 except Exception:
     print("unknown")
 
 PY
 ) || VERSION="unknown"
-echo "LastFrame build tool (v$VERSION)"
+echo "FirstFrame build tool (v$VERSION)"
 echo "========================================"
 
 show_help() {
@@ -59,13 +59,13 @@ do_setup() {
 }
 
 do_version() {
-    echo "LastFrame build tool (v$VERSION)"
+    echo "FirstFrame build tool (v$VERSION)"
 }
 
 do_clean() {
     echo "Cleaning project (including all egg-info)..."
     rm -rf build dist .eggs .pytest_cache
-    rm -rf LastFrame.egg-info src/LastFrame.egg-info src/LastFrame.*.egg-info 2>/dev/null || true
+    rm -rf FirstFrame.egg-info src/FirstFrame.egg-info src/FirstFrame.*.egg-info 2>/dev/null || true
     find . -type d -name "__pycache__" -exec rm -rf {} + 2>/dev/null || true
     find . -type f -name "._*" -delete 2>/dev/null || true
     echo "Clean complete — all egg-info destroyed"
@@ -97,7 +97,7 @@ do_git() {
 
 do_tag() {
     if [ "$VERSION" = "unknown" ]; then
-        echo "ERROR: Cannot determine version. Is __version__ set in src/LastFrame/__init__.py?"
+        echo "ERROR: Cannot determine version. Is __version__ set in src/FirstFrame/__init__.py?"
         exit 1
     fi
 
@@ -106,7 +106,7 @@ do_tag() {
     git tag -a "$TAG" -m "Release $TAG"
     git push origin "$TAG"
     echo "Tag $TAG created and pushed successfully!"
-    echo "-> https://github.com/Wilgat/LastFrame/releases/tag/$TAG"
+    echo "-> https://github.com/Wilgat/FirstFrame/releases/tag/$TAG"
 }
 
 # NEW: run tests

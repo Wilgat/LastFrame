@@ -58,13 +58,11 @@ do_setup() {
     pip3     install --upgrade build twine pytest
 }
 
-<<<<<<< HEAD
-=======
 do_version() {
-    echo "FirstFrame build tool (v$VERSION)"
+    echo "LastFrame build tool (v$VERSION)"
 }
 
->>>>>>> origin/main
+
 do_clean() {
     echo "Cleaning project (including all egg-info)..."
     rm -rf build dist .eggs .pytest_cache

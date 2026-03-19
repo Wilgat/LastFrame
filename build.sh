@@ -58,10 +58,6 @@ do_setup() {
     pip3     install --upgrade build twine pytest
 }
 
-do_version() {
-    echo "LastFrame build tool (v$VERSION)"
-}
-
 do_clean() {
     echo "Cleaning project (including all egg-info)..."
     rm -rf build dist .eggs .pytest_cache
@@ -134,7 +130,6 @@ case "${1:-}" in
     upload)    do_upload    ;;
     git)       do_git       ;;
     tag)       do_tag       ;;
-    version)   do_version   ;;
     test)      shift; do_test "$@" ;;           # <-- new command
     release|all)
                do_clean
